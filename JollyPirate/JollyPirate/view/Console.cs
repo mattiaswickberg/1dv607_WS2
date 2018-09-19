@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace JollyPirate.view
+namespace Member.view
 {
     class Console
 

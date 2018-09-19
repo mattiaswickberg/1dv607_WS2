@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace JollyPirate
+namespace Member
 {
     class Program
     {
         static void Main(string[] args)
         {
-            model.JollyPirate m = new model.JollyPirate();
+            model.Member m = new model.Member();
             view.Console v = new view.Console();
             controller.User c = new controller.User();
 
