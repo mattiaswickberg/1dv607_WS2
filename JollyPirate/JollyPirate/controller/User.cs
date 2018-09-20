@@ -17,10 +17,25 @@ namespace Member.controller
             }
         }
 
+        public String[] ListMembers()
+        {
+
+        }
+
+        public String[] ListMembersWithDetails()
+        {
+
+        }
+
+        public Object CreateNewMember(String name, String personalNumber)
+        {
+
+        }
+
 
         public void WriteDataToFile(model.Member a_system, String roster)
         {
-            a_system.WriteDataToFile("roster");
+            a_system.WriteDataToFile(roster);
         }
     }
 }

@@ -8,3 +8,4 @@ C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\De
 C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Debug\netcoreapp2.1\JollyPirate.AssemblyInfo.cs
 C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Debug\netcoreapp2.1\JollyPirate.dll
 C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Debug\netcoreapp2.1\JollyPirate.pdb
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Debug\netcoreapp2.1\JollyPirate.csprojAssemblyReference.cache

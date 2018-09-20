@@ -8,6 +8,30 @@ namespace Member.model
 {
     class Member
     {
+        private String name;
+        private String personalNumber;
+        private String memberId;
+        private Array boats;
+
+
+        public String getName()
+        {
+            return name;
+        }
+
+        public String getPersonalNumber()
+        {
+            return personalNumber;
+        }
+
+        public String getMemberId() {
+            return memberId;
+        }
+
+        public Object registerNewBoat(String type, Int32 length)
+        {
+
+        }
                
         public void WriteDataToFile(String dataToWrite)
         {
