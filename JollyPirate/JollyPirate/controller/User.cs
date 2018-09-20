@@ -16,5 +16,11 @@ namespace Member.controller
 
             }
         }
+
+
+        public void WriteDataToFile(model.Member a_system, String roster)
+        {
+            a_system.WriteDataToFile("roster");
+        }
     }
 }

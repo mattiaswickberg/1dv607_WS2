@@ -3,7 +3,6 @@ C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\De
 C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Debug\netcoreapp2.1\JollyPirate.runtimeconfig.dev.json
 C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Debug\netcoreapp2.1\JollyPirate.dll
 C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Debug\netcoreapp2.1\JollyPirate.pdb
-C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Debug\netcoreapp2.1\JollyPirate.csprojAssemblyReference.cache
 C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Debug\netcoreapp2.1\JollyPirate.csproj.CoreCompileInputs.cache
 C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Debug\netcoreapp2.1\JollyPirate.AssemblyInfoInputs.cache
 C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Debug\netcoreapp2.1\JollyPirate.AssemblyInfo.cs
