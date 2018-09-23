@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="JollyPirate.controller.User" Collapsed="true">
+    <Position X="4.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAABAAAAAAAAAAAAAAAAAAAAAICAAAAgAACABAAAA=</HashCode>
+      <FileName>controller\User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Member" />
+      <Property Name="Console" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="JollyPirate.model.Boat">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>model\Boat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JollyPirate.model.Member">
+    <Position X="4.25" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAABMAAIAAABAAAECAAAAAAEAAAAAAA=</HashCode>
+      <FileName>model\Member.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JollyPirate.view.Console" Collapsed="true">
+    <Position X="7" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAIAAAAAAAQAAAAAA=</HashCode>
+      <FileName>view\Console.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JollyPirate.Program" Collapsed="true">
+    <Position X="1.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

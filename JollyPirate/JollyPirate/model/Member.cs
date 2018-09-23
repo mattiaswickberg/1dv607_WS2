@@ -3,41 +3,71 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Diagnostics;
+using Newtonsoft.Json;
 
-namespace Member.model
+namespace JollyPirate.model
 {
     class Member
     {
-        private String name;
-        private String personalNumber;
-        private String memberId;
-        private Array boats;
+        private string Name;
+        private string PersonalNumber;
+        private readonly string MemberId;
+        private Boat[] Boats = Array.Empty<Boat>();
 
+        public Member(String nameToAdd, String personalNumberToAdd)
+        {
+            Name = nameToAdd;
+            PersonalNumber = personalNumberToAdd;
+            MemberId = "1";
+        }
+
+        internal JollyPirate.model.Boat Boat
+        {
+            get => default(JollyPirate.model.Boat);
+        }
 
         public String getName()
         {
-            return name;
+            return Name;
+        }
+
+        public void setName(string name)
+        {
+            Name = name;
         }
 
         public String getPersonalNumber()
         {
-            return personalNumber;
+            return PersonalNumber;
+        }
+
+        public void setPersonalNumber(string personalNumber)
+        {
+            PersonalNumber = personalNumber;
         }
 
         public String getMemberId() {
-            return memberId;
+            return MemberId;
         }
 
         public Object registerNewBoat(String type, Int32 length)
         {
-
+            throw new System.NotImplementedException();
         }
-               
-        public void WriteDataToFile(String dataToWrite)
-        {
-            string currentDirectory = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
 
-            System.IO.File.WriteAllText(String.Concat(currentDirectory, @"\members.txt"), dataToWrite);
+        public void SaveUserToFile()
+        {
+            object member = new
+            {
+                this.Name,
+                this.PersonalNumber,
+                this.MemberId,
+                this.Boats
+            };
+            string memberAsJson = JsonConvert.SerializeObject(member);
+            string currentDirectory = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
+            Console.WriteLine(memberAsJson);
+            File.WriteAllText(String.Concat(currentDirectory, @"\members.txt"), memberAsJson);
         }
 
     }
