@@ -8,10 +8,13 @@ namespace JollyPirate.model
     {
         private string Type;
         private int Length;
+        private readonly string Id;
 
-        public Boat(string type, int length)
+        public Boat(string type, int length, string id)
         {
-
+            Type = type;
+            Length = length;
+            Id = id;
         }
 
         public string getType()
@@ -34,6 +37,15 @@ namespace JollyPirate.model
             Length = newLength;
         }
 
+        public string GetId()
+        {
+            return Id;
+        }
+
+        public override string ToString()
+        {
+            return "Boat of type: " + Type + " with length: " + Length.ToString() + ". ID: " + Id;
+        }
 
     }
 }
