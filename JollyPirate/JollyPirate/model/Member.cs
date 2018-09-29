@@ -71,7 +71,7 @@ namespace JollyPirate.model
         {
             if (details)
             {
-                return "Member: " + Name + Environment.NewLine + ". Personal Number: " + PersonalNumber + Environment.NewLine + ". Member Id: " + MemberId + Environment.NewLine + ". Boats: " + Boats;
+                return "Member: " + Name + Environment.NewLine + ". Personal Number: " + PersonalNumber + Environment.NewLine + ". Member Id: " + MemberId + Environment.NewLine + ". Boats: " + BoatsToString();
             } else
             {
                 return "Member: " + Name + ". Member Id: " + MemberId + ". Number of boats: " + NumberOfBoats() + ".";
@@ -79,9 +79,12 @@ namespace JollyPirate.model
         }
 
 
-        public void RegisterNewBoat(String type, Int32 length)
+        public void RegisterNewBoat(String type, Int32 length, string id)
         {
-            string id = GenerateBoatId();
+            if (id == "0")
+            {
+                id = GenerateBoatId();
+            }
             Boat boat = new Boat(type, length, id);
             Boats.Add(boat);
         }
@@ -106,9 +109,16 @@ namespace JollyPirate.model
             return Boats.Count.ToString();
         }
 
-        private string BoatsToString()
+        public string BoatsToString()
         {
-            throw new NotImplementedException();
+            string boats = "";
+
+            foreach (Boat b in Boats)
+            {
+                boats += Environment.NewLine + "Boat with id: " + b.GetId() + Environment.NewLine + "Type: " + b.getType() + Environment.NewLine + "Length: " + b.getLength() + Environment.NewLine;
+            }
+
+            return boats;
         }
     }
 }
