@@ -14,15 +14,23 @@ namespace JollyPirate.controller
             get => new view.Console();
         }
 
+        internal view.BoatView BoatView
+        {
+            get => new view.BoatView();
+        }
+
+        internal view.MemberView MemberView
+        {
+            get => new view.MemberView();
+        }
+
         internal model.Roster Roster
         {
-            get => new model.Roster(Console);
+            get => new model.Roster(Console, MemberView, BoatView);
         }
 
         public void StartSystem()
         {
-            Console.DisplayMenu();
-
             Roster.GetCurrentMembers();
 
             string input;
@@ -30,41 +38,46 @@ namespace JollyPirate.controller
 
             while(systemActive)
             {
-                Console.DisplayMenu();
+                input = Console.DisplayMenu();
 
-                input = System.Console.ReadLine();
-                System.Console.WriteLine(input);
-
-
-                if (input == "quit")
+                switch (input)
                 {
-                    systemActive = false;
-                }
-
-                if (input == "1")
-                {
-                    Roster.CreateNewMember();
-                }
-
-                if ( input == "2")
-                {
-                    Roster.ListMembers();
-
-                }
-                if (input == "3")
-                {
-                    Roster.ListMembersWithDetails();
-                }
-
-                if (input == "4")
-                {
-                    Roster.ViewMember();
-                }
-
-                if (input == "5")
-                {
-                    Roster.EditMember();
-                }
+                    case "quit":
+                        {
+                            systemActive = false;
+                            break;
+                        }
+                    case "1":
+                        {
+                            Roster.CreateNewMember();
+                            break;
+                        }
+                    case "2":
+                        {
+                            Roster.ListMembers();
+                            break;
+                        }
+                    case "3":
+                        {
+                            Roster.ListMembersWithDetails();
+                            break;
+                        }
+                    case "4":
+                        {
+                            Roster.ViewMember();
+                            break;
+                        }
+                    case "5":
+                        {
+                            Roster.EditMember();
+                            break;
+                        }
+                    default:
+                        {
+                            Console.InvalidChoice();
+                            break;
+                        }
+                }                
             }
         }       
     }

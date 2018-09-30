@@ -9,13 +9,17 @@ namespace JollyPirate.model
 {
     class Roster
     {
-        internal view.Console Console;        
+        internal view.Console Console;
+        internal view.MemberView MemberView;
+        internal view.BoatView BoatView;
 
         private List<Member> Members;
 
-        public Roster(view.Console console)
+        public Roster(view.Console console, view.MemberView memberView, view.BoatView boatView)
         {
             Console = console;
+            MemberView = memberView;
+            BoatView = boatView;
             Members = GetCurrentMembers();
         }
 
@@ -25,100 +29,95 @@ namespace JollyPirate.model
         }
 
         public void CreateNewMember()
-        {
-            Console.GetNewMemberName();
-            string name = System.Console.ReadLine();
-            Console.GetPersonalNumber();
-            string personalNumber = System.Console.ReadLine();
-            System.Console.WriteLine("New member's name is: " + name);
-            System.Console.WriteLine("New member's personal number is: " + personalNumber);
-            System.Console.WriteLine("Press any key to continue ...");
-            System.Console.ReadLine();
-            Member newMember;
-            string memberId = GenerateMemberId();
-            newMember = new Member(name, personalNumber, memberId);
-            Members.Add(newMember);
-            SaveMembersToFile();
-            System.Console.WriteLine("Press any key to continue ...");
-            System.Console.ReadLine();
+        {            
+            string name = MemberView.GetNewMemberName();
+            if (name != "back")
+            {
+                string personalNumber = MemberView.GetPersonalNumber();
+                if (personalNumber != "back")
+                {
+                    Member newMember;
+                    string memberId = GenerateMemberId();
+                    newMember = new Member(name, personalNumber, memberId);
+                    Members.Add(newMember);
+                    SaveMembersToFile();
+                    MemberView.NewMemberAdded(newMember.ToString());
+                }                
+            }            
         }
 
         public void ListMembers()
         {
             foreach (Member m in Members)
             {
-                System.Console.WriteLine(m.ToString());
+                MemberView.WriteMemberToConsole(m.ToString());
             }
-            System.Console.WriteLine("Press any key to continue ...");
-            System.Console.ReadKey();
+            Console.PressToContinue();
         }
 
         public void ListMembersWithDetails()
         {
             foreach (Member m in Members)
             {
-                System.Console.WriteLine(m.ToString(true));
+                MemberView.WriteMemberToConsole(m.ToString(true));
             }
-            System.Console.WriteLine("Press any key to continue ...");
-            System.Console.ReadKey();
+            Console.PressToContinue();
         }
 
         public void ViewMember()
         {
-            Console.ViewMemberById();
-            string memberId = System.Console.ReadLine();
+            
+            string memberId = MemberView.ViewMemberById();
             Member member = FindMemberById(memberId);
 
             if (member.GetMemberId() != "0")
             {
-                System.Console.WriteLine("");
-                System.Console.Write(member.ToString(true));
-                System.Console.WriteLine(Environment.NewLine + "Press any key to continue ...");
-                System.Console.ReadKey();
-            } else
+                MemberView.WriteMemberToConsole(member.ToString(true));
+                Console.PressToContinue();
+            }
+            else
             {
-                Console.MemberNotFound();
+                MemberView.MemberNotFound();
             }
         }
 
         public void EditMember()
         {
-            Console.EditMemberById();
-            string memberId = System.Console.ReadLine();
+            string memberId = MemberView.EditMemberById();
             Member member = FindMemberById(memberId);
 
             if (member.GetMemberId() != "0")
             {
-                Console.EditMemberMenu();
+                MemberView.WriteMemberToConsole(member.ToString(true));
+                MemberView.EditMemberMenu();
                 string choice = System.Console.ReadLine();
 
                 if (choice == "1")
                 {
-                    Console.GetNewMemberName();
-                    string name = System.Console.ReadLine();
+                    string name = MemberView.GetNewMemberName();
                     member.SetName(name);
-                    SaveMembersToFile();
                     Console.Success();
 
                 } else if (choice == "2")
                 {
-                    Console.GetPersonalNumber();
-                    string personalNumber = System.Console.ReadLine();
+                    string personalNumber = MemberView.GetPersonalNumber();
                     member.SetPersonalNumber(personalNumber);
-                    SaveMembersToFile();
                     Console.Success();
 
                 } else if (choice == "3")
                 {
-                    Console.BoatMenu();
-                    string newChoice = System.Console.ReadLine();
-                    if(newChoice == "1")
+                    string newChoice = BoatView.BoatMenu();
+                    if (newChoice == "1")
                     {
                         AddBoat(member);                        
                     }
                     else if (newChoice == "2")
                     {
                         EditBoat(member);
+                    }
+                    else if (newChoice == "3")
+                    {
+                        DeleteBoat(member);
                     }
                     else
                     {
@@ -127,29 +126,27 @@ namespace JollyPirate.model
 
                 } else if (choice == "4")
                 {
-                    if (Console.ConfirmDelete(member.getName()))
+                    if (MemberView.ConfirmDelete(member.GetName()))
                     {
                         Members.Remove(member);
-                        SaveMembersToFile();
                     }
 
                 } else
                 {
                     Console.InvalidChoice();
                 }
-                System.Console.WriteLine(Environment.NewLine + "Press any key to continue ...");
-                System.Console.ReadKey();
+                Console.PressToContinue();
             }
             else
             {
-                Console.MemberNotFound();
+                MemberView.MemberNotFound();
             }
+            SaveMembersToFile();
         }
 
         public void AddBoat(Member member)
         {
-            Console.AddBoatMenu();
-            Console.ChooseBoatType();
+            BoatView.AddBoatMenu();
             string type = BoatType();
             
             if(type.Length == 0)
@@ -158,8 +155,7 @@ namespace JollyPirate.model
             }
             else
             {
-                Console.GetBoatLength();
-                string lengthAsString = System.Console.ReadLine();
+                string lengthAsString = BoatView.GetBoatLength();
                 if (Int32.TryParse(lengthAsString, out int length))
                 {
                     member.RegisterNewBoat(type, length, "0");
@@ -171,13 +167,11 @@ namespace JollyPirate.model
                     Console.InvalidChoice();
                 }
             }
-
         }
-        
 
         public string BoatType()
         {
-            string choice = System.Console.ReadLine();
+            string choice = BoatView.ChooseBoatType();
             string type = "";
 
             switch (choice)
@@ -208,8 +202,7 @@ namespace JollyPirate.model
 
         public void EditBoat(Member member)
         {
-            Console.EditBoatMenu(member.BoatsToString());
-            string id = System.Console.ReadLine();
+            string id = BoatView.EditBoatMenu(member.BoatsToString());
             Boat boat = new Boat("Other", 1, "0");
             foreach (Boat b in member.getBoats())
             {
@@ -220,15 +213,15 @@ namespace JollyPirate.model
             }
             if (boat.GetId() == "0")
             {
-                Console.BoatNotFound();
+                BoatView.BoatNotFound();
             }
             else
             {
-                Console.EditBoatChoice();
+                BoatView.EditBoatChoice();
                 string choice = System.Console.ReadLine();
                 if (choice == "1")
                 {
-                    Console.ChooseBoatType();
+                    BoatView.ChangeType();
                     string type = BoatType();
                     
                     if (type.Length == 0)
@@ -244,10 +237,8 @@ namespace JollyPirate.model
                 }
                 else if (choice == "2")
                 {
-                    Console.GetBoatLength();
-                    string lengthAsString = System.Console.ReadLine();
-                    int length;
-                    if (Int32.TryParse(lengthAsString, out length))
+                    string lengthAsString = BoatView.GetBoatLength();
+                    if (Int32.TryParse(lengthAsString, out int length))
                     {
                         boat.setLength(length);
                         SaveMembersToFile();
@@ -265,6 +256,18 @@ namespace JollyPirate.model
                 }
             }
         }
+
+        public void DeleteBoat(Member member)
+        {
+            string boatsAsString = member.BoatsToString();
+            string id = BoatView.GetBoatIdToDelete(boatsAsString);
+            if (BoatView.ConfirmDelete())
+            {
+                member.DeleteBoat(id);
+            }
+            
+        }
+
 
         public List<Member> GetCurrentMembers()
         {
@@ -299,8 +302,6 @@ namespace JollyPirate.model
 
         public void SaveMembersToFile()
         {
-            System.Console.WriteLine("Saving members ...");
-            ListMembersWithDetails();
             List<object> membersToSave = new List<object>();
 
             foreach (Member m in Members)
@@ -321,7 +322,7 @@ namespace JollyPirate.model
 
                 object memberToSave = new
                 {
-                    Name = m.getName(),
+                    Name = m.GetName(),
                     PersonalNumber = m.GetPersonalNumber(),
                     MemberId = m.GetMemberId(),
                     Boats = boatsToSave,
@@ -330,7 +331,7 @@ namespace JollyPirate.model
                 membersToSave.Add(memberToSave);
             }
 
-            string membersAsJson = JsonConvert.SerializeObject(membersToSave);
+            string membersAsJson = JsonConvert.SerializeObject(membersToSave, Formatting.Indented);
             string currentDirectory = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName);
             File.WriteAllText(String.Concat(currentDirectory, @"\members.txt"), membersAsJson);
         }

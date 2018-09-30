@@ -3,32 +3,31 @@
   <Class Name="JollyPirate.controller.User" Collapsed="true">
     <Position X="4.25" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACAABAAAAAAAAAAAAAAAAAAAAAICAAAAgAACABAAAA=</HashCode>
+      <HashCode>AACAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>controller\User.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Member" />
       <Property Name="Console" />
     </ShowAsAssociation>
   </Class>
   <Class Name="JollyPirate.model.Boat">
     <Position X="7" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAABAAAAEAAAEAAAAAABAARAAAAAAAQAAAAIAAAA=</HashCode>
       <FileName>model\Boat.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="JollyPirate.model.Member">
     <Position X="4.25" Y="2.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAABMAAIAAABAAAECAAAAAAEAAAAAAA=</HashCode>
+      <HashCode>AAAAEAIAAAEAAAAEIQAAARQAEQAAIQIAABAEQAAAACA=</HashCode>
       <FileName>model\Member.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="JollyPirate.view.Console" Collapsed="true">
-    <Position X="7" Y="1" Width="1.5" />
+  <Class Name="JollyPirate.view.Console">
+    <Position X="9.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAIAAAAAAAQAAAAAA=</HashCode>
+      <HashCode>QAAKAACAAAAAAAAAEAQgAAAACgAAIEAAEACARABABAA=</HashCode>
       <FileName>view\Console.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -9,7 +9,10 @@ namespace JollyPirate.model
         private string Type;
         private int Length;
         private readonly string Id;
-
+        
+        /**
+        * Constructor for the boat class
+        **/
         public Boat(string type, int length, string id)
         {
             Type = type;
@@ -17,6 +20,9 @@ namespace JollyPirate.model
             Id = id;
         }
 
+        /**
+        * Getters and setters
+        **/
         public string getType()
         {
             return Type;
@@ -41,7 +47,10 @@ namespace JollyPirate.model
         {
             return Id;
         }
-
+        
+        /**
+        * Turns boat into string for printing to console
+        **/
         public override string ToString()
         {
             return "Boat of type: " + Type + " with length: " + Length.ToString() + ". ID: " + Id;
