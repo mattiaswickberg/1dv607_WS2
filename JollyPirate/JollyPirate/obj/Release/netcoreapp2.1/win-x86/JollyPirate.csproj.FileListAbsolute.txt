@@ -1,6 +1,3 @@
-C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\win-x86\hostpolicy.dll
-C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\win-x86\hostfxr.dll
-C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\win-x86\JollyPirate.exe
 C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\win-x86\JollyPirate.deps.json
 C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\win-x86\JollyPirate.runtimeconfig.json
 C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\win-x86\JollyPirate.runtimeconfig.dev.json
@@ -12,3 +9,6 @@ C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Re
 C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Release\netcoreapp2.1\win-x86\JollyPirate.AssemblyInfo.cs
 C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Release\netcoreapp2.1\win-x86\JollyPirate.dll
 C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Release\netcoreapp2.1\win-x86\JollyPirate.pdb
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\win-x86\hostpolicy.dll
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\win-x86\hostfxr.dll
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\win-x86\JollyPirate.exe

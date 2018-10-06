@@ -4,7 +4,7 @@ using System.Text;
 
 namespace JollyPirate.model
 {
-    class Boat
+    public class Boat
     {
         private string Type;
         private int Length;
@@ -47,14 +47,5 @@ namespace JollyPirate.model
         {
             return Id;
         }
-        
-        /**
-        * Turns boat into string for printing to console
-        **/
-        public override string ToString()
-        {
-            return "Boat of type: " + Type + " with length: " + Length.ToString() + ". ID: " + Id;
-        }
-
     }
 }

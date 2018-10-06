@@ -14,6 +14,7 @@
             System.Console.WriteLine("3. List members with details");
             System.Console.WriteLine("4. View member");
             System.Console.WriteLine("5. Edit member");
+            System.Console.WriteLine("6. Delete member");
             System.Console.WriteLine("Or type 'quit' to exit.");
             return System.Console.ReadLine();
         }

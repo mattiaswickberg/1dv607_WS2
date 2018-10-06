@@ -1,38 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using System.Diagnostics;
-using Newtonsoft.Json;
 
 namespace JollyPirate.controller
 {
     class User
     {
-        internal view.Console Console
-        {
-            get => new view.Console();
-        }
+        private view.Console Console;
+        private view.BoatView BoatView;
+        private view.MemberView MemberView;
+        private model.Roster Roster;
+        private RosterController RosterController;
+        private MemberController MemberController;
 
-        internal view.BoatView BoatView
+        public User()
         {
-            get => new view.BoatView();
-        }
+            Console = new view.Console();
+            BoatView = new view.BoatView();
+            MemberView = new view.MemberView();
+            Roster = new model.Roster(Console, MemberView);
+            RosterController = new RosterController(MemberView, Roster);
+            MemberController = new MemberController(Roster, MemberView, BoatView);
 
-        internal view.MemberView MemberView
-        {
-            get => new view.MemberView();
         }
-
-        internal model.Roster Roster
-        {
-            get => new model.Roster(Console, MemberView, BoatView);
-        }
-
         public void StartSystem()
         {
-            Roster.GetCurrentMembers();
-
             string input;
             bool systemActive = true;
 
@@ -44,12 +34,13 @@ namespace JollyPirate.controller
                 {
                     case "quit":
                         {
+                            Roster.SaveMembersToFile();
                             systemActive = false;
                             break;
                         }
                     case "1":
                         {
-                            Roster.CreateNewMember();
+                            RosterController.AddNewMember();
                             break;
                         }
                     case "2":
@@ -69,7 +60,14 @@ namespace JollyPirate.controller
                         }
                     case "5":
                         {
-                            Roster.EditMember();
+                            string memberId = EditMemberById();
+                            model.Member member = Roster.FindMemberById(memberId);
+                            MemberController.EditMember(member);
+                            break;
+                        }
+                    case "6":
+                        {
+                            RosterController.DeleteMember();
                             break;
                         }
                     default:
@@ -79,6 +77,11 @@ namespace JollyPirate.controller
                         }
                 }                
             }
-        }       
+        }
+        public string EditMemberById()
+        {
+            System.Console.WriteLine("Type the Id of the member you want to edit:");
+            return System.Console.ReadLine();
+        }        
     }
 }

@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.IO;
-using System.Diagnostics;
-using Newtonsoft.Json;
 
 namespace JollyPirate.model
 {
-    class Member
+    public class Member
     {
         private string Name;
         private string PersonalNumber;
@@ -66,22 +62,7 @@ namespace JollyPirate.model
         public void SetBoats(List<Boat> boats)
         {
             Boats = boats;
-        }
-
-
-        /**
-        * Turns the member information into a string for printing to console. 
-        **/
-        public string ToString(bool details = false)
-        {
-            if (details)
-            {
-                return "Name: " + Name + Environment.NewLine + ". Personal Number: " + PersonalNumber + Environment.NewLine + ". Member Id: " + MemberId + Environment.NewLine + ". Boats: " + BoatsToString();
-            } else
-            {
-                return "Name: " + Name + ". Member Id: " + MemberId + ". Number of boats: " + NumberOfBoats() + ".";
-            }
-        }
+        }       
 
         /**
         * Adds a new boat to the member's boat list. 
@@ -102,6 +83,7 @@ namespace JollyPirate.model
 
             foreach (Boat b in Boats)
             {
+
                 if (b.GetId() == id)
                 {
                     boat = b;
@@ -109,7 +91,7 @@ namespace JollyPirate.model
             }
             if (boat.GetId() != "0")
             {
-                Boats.Remove(boat);                
+                Boats.Remove(boat);
             }
         }
 
@@ -129,30 +111,6 @@ namespace JollyPirate.model
                 }
             }
             return id.ToString();
-        }
-
-
-        /**
-        * returns the number of entries in a member's boat list
-        **/
-        private string NumberOfBoats()
-        {
-            return Boats.Count.ToString();
-        }
-
-        /**
-        * Turns a member's boat list into a string to print to console
-        **/
-        public string BoatsToString()
-        {
-            string boats = "";
-
-            foreach (Boat b in Boats)
-            {
-                boats += Environment.NewLine + "Boat with id: " + b.GetId() + Environment.NewLine + "Type: " + b.getType() + Environment.NewLine + "Length: " + b.getLength() + Environment.NewLine;
-            }
-
-            return boats;
         }
     }
 }

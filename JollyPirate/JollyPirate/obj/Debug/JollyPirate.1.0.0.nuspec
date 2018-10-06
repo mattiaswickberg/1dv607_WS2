@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>JollyPirate</id>
+    <version>1.0.0</version>
+    <authors>JollyPirate</authors>
+    <owners>JollyPirate</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp2.1">
+        <dependency id="Microsoft.NETCore.App" version="2.1.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="11.0.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Debug\netcoreapp2.1\JollyPirate.runtimeconfig.json" target="lib\netcoreapp2.1\JollyPirate.runtimeconfig.json" />
+    <file src="C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Debug\netcoreapp2.1\JollyPirate.dll" target="lib\netcoreapp2.1\JollyPirate.dll" />
+  </files>
+</package>

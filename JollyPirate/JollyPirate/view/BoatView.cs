@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace JollyPirate.view
 {
@@ -47,9 +46,9 @@ namespace JollyPirate.view
             return System.Console.ReadLine();
         }
 
-        public string EditBoatMenu(string boats)
+        public string EditBoatMenu(List<model.Boat> boats)
         {
-            System.Console.WriteLine(boats);
+            System.Console.WriteLine(BoatsToString(boats));
             System.Console.WriteLine("Type in the id of the boat you want to edit:");
             return System.Console.ReadLine();
         }
@@ -62,9 +61,9 @@ namespace JollyPirate.view
             return System.Console.ReadLine();
         }
 
-        public string GetBoatIdToDelete(string boats)
-        {
-            System.Console.WriteLine(boats);
+        public string GetBoatIdToDelete(List<model.Boat> boats)
+        {            
+            System.Console.WriteLine(BoatsToString(boats));
             System.Console.WriteLine("Type in the id of the boat you want to delete:");
             return System.Console.ReadLine();
         }
@@ -81,6 +80,38 @@ namespace JollyPirate.view
             {
                 return false;
             }
+        }
+
+        public void InvalidChoice()
+        {
+            System.Console.WriteLine("You have made an invalid choice.");
+            PressToContinue();
+        }
+
+
+        public void Success()
+        {
+            System.Console.WriteLine("Your changes have been made!");
+            PressToContinue();
+        }
+
+        public void PressToContinue()
+        {
+            System.Console.WriteLine("Press any key to continue ...");
+            System.Console.ReadKey();
+        }
+        public string BoatsToString(List<model.Boat> Boats)
+        {
+            string boats = "";
+
+            foreach (model.Boat b in Boats)
+            {
+                boats += Environment.NewLine + "Boat with id: " + b.GetId()
+                    + Environment.NewLine + "Type: " + b.getType()
+                    + Environment.NewLine + "Length: " + b.getLength()
+                    + Environment.NewLine;
+            }
+            return boats;
         }
     }
 }

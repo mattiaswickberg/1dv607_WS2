@@ -1,0 +1,14 @@
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\osx-x64\libhostpolicy.dylib
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\osx-x64\libhostfxr.dylib
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\osx-x64\JollyPirate
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\osx-x64\JollyPirate.deps.json
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\osx-x64\JollyPirate.runtimeconfig.json
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\osx-x64\JollyPirate.runtimeconfig.dev.json
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\osx-x64\JollyPirate.dll
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\bin\Release\netcoreapp2.1\osx-x64\JollyPirate.pdb
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Release\netcoreapp2.1\osx-x64\JollyPirate.csprojAssemblyReference.cache
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Release\netcoreapp2.1\osx-x64\JollyPirate.csproj.CoreCompileInputs.cache
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Release\netcoreapp2.1\osx-x64\JollyPirate.AssemblyInfoInputs.cache
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Release\netcoreapp2.1\osx-x64\JollyPirate.AssemblyInfo.cs
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Release\netcoreapp2.1\osx-x64\JollyPirate.dll
+C:\Users\ad13113\github\webprog\1dv607\1dv607_WS2\JollyPirate\JollyPirate\obj\Release\netcoreapp2.1\osx-x64\JollyPirate.pdb
