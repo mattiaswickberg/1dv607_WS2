@@ -7,17 +7,14 @@ namespace JollyPirate.controller
         private model.Roster Roster;
         private view.MemberView MemberView;
         private view.BoatView BoatView;
-
-        internal BoatController BoatController
-        {
-            get => new BoatController(BoatView, Roster);
-        }
+        private BoatController BoatController;
 
         public MemberController(model.Roster roster, view.MemberView memberView, view.BoatView boatView)
         {
             Roster = roster;
             MemberView = memberView;
             BoatView = boatView;
+            BoatController = new BoatController(BoatView, Roster);
         }
 
         public void EditMember(model.Member member)

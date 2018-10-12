@@ -80,7 +80,7 @@ namespace JollyPirate.controller
         }
         public string EditMemberById()
         {
-            System.Console.WriteLine("Type the Id of the member you want to edit:");
+            Console.InputMemberId();
             return System.Console.ReadLine();
         }        
     }

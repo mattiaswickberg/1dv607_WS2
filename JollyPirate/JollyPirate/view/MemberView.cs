@@ -5,6 +5,11 @@ namespace JollyPirate.view
 {
     class MemberView
     {
+        public string InputMemberIdToDelete()
+        {
+            System.Console.WriteLine("Type the Id of the member you want to delete:");
+            return System.Console.ReadLine();
+        }
         public string GetNewMemberName()
         {
             System.Console.Clear();

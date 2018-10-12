@@ -107,8 +107,7 @@ namespace JollyPirate.controller
             }
             else
             {
-                BoatView.EditBoatChoice();
-                string choice = System.Console.ReadLine();
+                string choice = BoatView.EditBoatChoice();
                 if (choice == "1")
                 {
                     BoatView.ChangeType();

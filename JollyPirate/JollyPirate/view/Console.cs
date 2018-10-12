@@ -19,6 +19,11 @@
             return System.Console.ReadLine();
         }
 
+        public void InputMemberId()
+        {
+            System.Console.WriteLine("Type the Id of the member you want to edit:");
+        }
+
         public void InvalidChoice()
         {
             System.Console.WriteLine("You have made an invalid choice.");

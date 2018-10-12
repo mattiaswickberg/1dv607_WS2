@@ -26,14 +26,9 @@ namespace JollyPirate.controller
 
         public void DeleteMember()
         {
-            string memberId = DeleteMemberById();
+            string memberId = MemberView.InputMemberIdToDelete();
             model.Member member = Roster.FindMemberById(memberId);
             Roster.DeleteMember(member);
-        }
-        public string DeleteMemberById()
-        {
-            System.Console.WriteLine("Type the Id of the member you want to delete:");
-            return System.Console.ReadLine();
         }
     }
 }
